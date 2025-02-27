@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSON 数据前端渲染</title>
+  <style>
+    /* 基础样式 */
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f0f2f5;
+      color: #333;
+    }
+    .header {
+      background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 1.5rem;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    /* 选项卡导航 */
+    .nav-tabs {
+      display: flex;
+      border-bottom: 2px solid #ddd;
+      margin-bottom: 2rem;
+    }
+    .nav-tabs button {
+      background: none;
+      border: none;
+      outline: none;
+      padding: 1rem 2rem;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background 0.3s;
+      color: #666;
+    }
+    .nav-tabs button:hover {
+      background: #f5f5f5;
+    }
+    .nav-tabs button.active {
+      border-bottom: 2px solid #4facfe;
+      font-weight: bold;
+      color: #333;
+    }
+    /* 隐藏选项卡内容 */
+    .tab-content {
+      display: none;
+    }
+    /* 表格样式 */
+    .table-container {
+      overflow-x: auto;
+      margin-bottom: 1rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 600px;
+    }
+    th, td {
+      padding: 0.75rem;
+      text-align: left;
+      border: 1px solid #ddd;
+    }
+    th {
+      background-color: #f9fafb;
+    }
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+    a {
+      color: #4facfe;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    /* 响应式 */
+    @media (max-width: 600px) {
+      .nav-tabs {
+        flex-direction: column;
+      }
+      .nav-tabs button {
+        text-align: left;
+        padding: 0.75rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    大模型基准测试汇总
+  </div>
+  <div class="container">
+    <!-- 选项卡导航 -->
+    <div class="nav-tabs">
+      <button class="tab-button" onclick="openTab('chatbotArena', this)">Chatbot Arena</button>
+      <button class="tab-button" onclick="openTab('aiBenchmark', this)">AI Benchmark</button>
+      <button class="tab-button" onclick="openTab('aiderLLM', this)">Aider LLM</button>
+    </div>
+
+    <!-- Chatbot Arena 数据 -->
+    <div id="chatbotArena" class="tab-content">
+      <h2>Chatbot Arena 数据</h2>
+      <div class="table-container">
+        <table id="chatbotArenaTable">
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Model Name</th>
+              <th>Link</th>
+              <th>Arena Score</th>
+              <th>95% CI</th>
+              <th>Votes</th>
+              <th>Organization</th>
+              <th>License</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- 数据行将在这里插入 -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- AI Benchmark 数据 -->
+    <div id="aiBenchmark" class="tab-content">
+      <h2>AI Benchmark 数据</h2>
+      <div class="table-container">
+        <table id="aiBenchmarkTable">
+          <thead>
+            <tr>
+              <th>Model</th>
+              <th>Arena Elo</th>
+              <th>MMLU</th>
+              <th>License</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- 数据行将在这里插入 -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Aider LLM 数据 -->
+    <div id="aiderLLM" class="tab-content">
+      <h2>Aider LLM 数据</h2>
+      <div class="table-container">
+        <table id="aiderLLMTable">
+          <thead>
+            <tr>
+              <th>Model</th>
+              <th>Percent completed correctly</th>
+              <th>Percent using correct edit format</th>
+              <th>Command</th>
+              <th>Edit format</th>
+              <th>Total Cost</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- 数据行将在这里插入 -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // 切换选项卡函数
+    function openTab(tabName, element) {
+      var i, tabContent, tabButtons;
+      tabContent = document.getElementsByClassName("tab-content");
+      for (i = 0; i < tabContent.length; i++) {
+        tabContent[i].style.display = "none";
+      }
+      document.getElementById(tabName).style.display = "block";
+
+      tabButtons = document.getElementsByClassName("tab-button");
+      for (i = 0; i < tabButtons.length; i++) {
+        tabButtons[i].classList.remove("active");
+      }
+      element.classList.add("active");
+    }
+
+    // 在页面加载后加载 JSON 数据，并默认显示第一个选项卡
+    document.addEventListener("DOMContentLoaded", function() {
+      // 默认显示第一个 tab
+      document.querySelector(".tab-button").click();
+
+      // 加载 Chatbot Arena 数据
+      fetch('chatbot_arena_data.json')
+        .then(response => response.json())
+        .then(data => {
+          const tbody = document.querySelector("#chatbotArenaTable tbody");
+          data.forEach(item => {
+            const tr = document.createElement("tr");
+            tr.innerHTML = `
+              <td>${item.rank}</td>
+              <td>${item.model}</td>
+              <td><a href="${item.model_link}" target="_blank">详情</a></td>
+              <td>${item.arena_score}</td>
+              <td>${item["95_ci"]}</td>
+              <td>${item.votes}</td>
+              <td>${item.organization}</td>
+              <td>${item.license}</td>
+            `;
+            tbody.appendChild(tr);
+          });
+        })
+        .catch(error => console.error('加载 chatbot_arena_data.json 失败：', error));
+
+      // 加载 AI Benchmark 数据
+      fetch('ai_benchmark_data.json')
+        .then(response => response.json())
+        .then(data => {
+          const tbody = document.querySelector("#aiBenchmarkTable tbody");
+          data.forEach(item => {
+            const tr = document.createElement("tr");
+            tr.innerHTML = `
+              <td>${item.Model}</td>
+              <td>${item["Arena Elo"]}</td>
+              <td>${item.MMLU}</td>
+              <td>${item.License}</td>
+            `;
+            tbody.appendChild(tr);
+          });
+        })
+        .catch(error => console.error('加载 ai_benchmark_data.json 失败：', error));
+
+      // 加载 Aider LLM 数据
+      fetch('aider_llm_data.json')
+        .then(response => response.json())
+        .then(data => {
+          const tbody = document.querySelector("#aiderLLMTable tbody");
+          data.forEach(item => {
+            const tr = document.createElement("tr");
+            tr.innerHTML = `
+              <td>${item.Model}</td>
+              <td>${item["Percent completed correctly"]}</td>
+              <td>${item["Percent using correct edit format"]}</td>
+              <td>${item.Command}</td>
+              <td>${item["Edit format"]}</td>
+              <td>${item["Total Cost"]}</td>
+            `;
+            tbody.appendChild(tr);
+          });
+        })
+        .catch(error => console.error('加载 aider_llm_data.json 失败：', error));
+    });
+  </script>
+</body>
+</html>

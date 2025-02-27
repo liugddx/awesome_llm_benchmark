@@ -1,0 +1,102 @@
+[
+    {
+        "rank": "1",
+        "model": "Claude 3.5 Sonnet (20241022)",
+        "model_link": "https://www.anthropic.com/claude/sonnet",
+        "arena_score": 1252.68,
+        "95_ci": "+7.71 / -5.21",
+        "votes": 16242,
+        "organization": "Anthropic",
+        "license": "Proprietary"
+    },
+    {
+        "rank": "2",
+        "model": "DeepSeek-R1",
+        "model_link": "https://api-docs.deepseek.com/news/news250120",
+        "arena_score": 1210.9,
+        "95_ci": "+9.44 / -10.49",
+        "votes": 3728,
+        "organization": "DeepSeek",
+        "license": "MIT"
+    },
+    {
+        "rank": "3",
+        "model": "o3-mini-high (20250131)",
+        "model_link": "https://openai.com/index/openai-o3-mini/",
+        "arena_score": 1157.14,
+        "95_ci": "+12.03 / -12.12",
+        "votes": 2336,
+        "organization": "OpenAI",
+        "license": "Proprietary"
+    },
+    {
+        "rank": "3",
+        "model": "Claude 3.5 Haiku (20241022)",
+        "model_link": "https://www.anthropic.com/claude/haiku",
+        "arena_score": 1138.22,
+        "95_ci": "+6.87 / -7.01",
+        "votes": 10694,
+        "organization": "Anthropic",
+        "license": "Proprietary"
+    },
+    {
+        "rank": "5",
+        "model": "Gemini-2.0-Pro-Exp-02-05",
+        "model_link": "https://deepmind.google/technologies/gemini/flash-thinking/",
+        "arena_score": 1111.42,
+        "95_ci": "+7.57 / -7.41",
+        "votes": 5067,
+        "organization": "Google",
+        "license": "Proprietary"
+    },
+    {
+        "rank": "5",
+        "model": "o3-mini (20250131)",
+        "model_link": "https://openai.com/index/openai-o3-mini/",
+        "arena_score": 1106.8,
+        "95_ci": "+8.52 / -6.05",
+        "votes": 5750,
+        "organization": "OpenAI",
+        "license": "Proprietary"
+    },
+    {
+        "rank": "7",
+        "model": "o1 (20241217)",
+        "model_link": "https://platform.openai.com/docs/models/o1-mini#o1",
+        "arena_score": 1054.47,
+        "95_ci": "+6.43 / -6.77",
+        "votes": 8873,
+        "organization": "OpenAI",
+        "license": "Proprietary"
+    },
+    {
+        "rank": "7",
+        "model": "o1-mini (20240912)",
+        "model_link": "https://platform.openai.com/docs/models/o1-mini#o1",
+        "arena_score": 1051.66,
+        "95_ci": "+6.05 / -4.18",
+        "votes": 13405,
+        "organization": "OpenAI",
+        "license": "Proprietary"
+    },
+    {
+        "rank": "7",
+        "model": "Gemini-2.0-Flash-Thinking-01-21",
+        "model_link": "https://deepmind.google/technologies/gemini/flash-thinking/",
+        "arena_score": 1038.65,
+        "95_ci": "+16.86 / -17.55",
+        "votes": 1064,
+        "organization": "Google",
+        "license": "Proprietary"
+    },
+    {
+        "rank": "9",
+        "model": "Gemini-2.0-Flash-Thinking-1219",
+        "model_link": "https://aistudio.google.com/app/prompts/new_chat?model=gemini-2.0-flash-exp",
+        "arena_score": 1026.64,
+        "95_ci": "+7.42 / -5.83",
+        "votes": 8010,
+        "organization": "Google",
+        "license": "Proprietary"
+    }
+]

@@ -1,0 +1,80 @@
+[
+    {
+        "Model": "DeepSeek-R1",
+        "Arena Elo": "1362",
+        "MMLU": "90.8",
+        "License": "MIT"
+    },
+    {
+        "Model": "DeepSeek-V3",
+        "Arena Elo": "1318",
+        "MMLU": "88.5",
+        "License": "DeepSeek"
+    },
+    {
+        "Model": "Qwen2.5-72B-Instruct",
+        "Arena Elo": "1257",
+        "MMLU": "86.8",
+        "License": "Qwen"
+    },
+    {
+        "Model": "Llama-3.3-70B-Instruct",
+        "Arena Elo": "1256",
+        "MMLU": "86",
+        "License": "Llama 3.3"
+    },
+    {
+        "Model": "chocolate (Early Grok-3)",
+        "Arena Elo": "1403",
+        "Coding": "1403",
+        "Vision": "9992",
+        "Organization": "xAI",
+        "License": "Proprietary"
+    },
+    {
+        "Model": "Gemini-2.0-Flash-Thinking-Exp-01-21",
+        "Arena Elo": "1385",
+        "Coding": "1368",
+        "Vision": "1282",
+        "Votes": "15083",
+        "Organization": "Google",
+        "License": "Proprietary"
+    },
+    {
+        "Model": "Gemini-2.0-Pro-Exp-02-05",
+        "Arena Elo": "1380",
+        "Coding": "1373",
+        "Vision": "1251",
+        "Votes": "13000",
+        "Organization": "Google",
+        "License": "Proprietary"
+    },
+    {
+        "Model": "ChatGPT-4o-latest (2025-01-29)",
+        "Arena Elo": "1377",
+        "Coding": "1364",
+        "Vision": "1276",
+        "Votes": "13470",
+        "Organization": "OpenAI",
+        "License": "Proprietary"
+    },
+    {
+        "Model": "Gemini-2.0-Flash-001",
+        "Arena Elo": "1358",
+        "Coding": "1355",
+        "Vision": "1232",
+        "Votes": "10862",
+        "Organization": "Google",
+        "License": "Proprietary"
+    },
+    {
+        "Model": "o1-2024-12-17",
+        "Arena Elo": "1352",
+        "Coding": "1360",
+        "Vision": "1216",
+        "MMLU": "90.4",
+        "Votes": "17248",
+        "Organization": "OpenAI",
+        "License": "Proprietary"
+    }
+]

@@ -1,0 +1,82 @@
+[
+    {
+        "Model": "claude-3-7-sonnet-20250219 (32k thinking tokens)",
+        "Percent completed correctly": "64.9%",
+        "Percent using correct edit format": "97.8%",
+        "Command": "aider --model anthropic/claude-3-7-sonnet-20250219 # plus yml config",
+        "Edit format": "diff",
+        "Total Cost": "$36.83"
+    },
+    {
+        "Model": "DeepSeek R1 + claude-3-5-sonnet-20241022",
+        "Percent completed correctly": "64.0%",
+        "Percent using correct edit format": "100.0%",
+        "Command": "aider --architect --model r1 --editor-model sonnet",
+        "Edit format": "architect",
+        "Total Cost": "$13.29"
+    },
+    {
+        "Model": "o1-2024-12-17 (high)",
+        "Percent completed correctly": "61.7%",
+        "Percent using correct edit format": "91.5%",
+        "Command": "aider --model openrouter/openai/o1",
+        "Edit format": "diff",
+        "Total Cost": "$186.5"
+    },
+    {
+        "Model": "claude-3-7-sonnet-20250219 (no thinking)",
+        "Percent completed correctly": "60.4%",
+        "Percent using correct edit format": "93.3%",
+        "Command": "aider --model sonnet",
+        "Edit format": "diff",
+        "Total Cost": "$17.72"
+    },
+    {
+        "Model": "o3-mini (high)",
+        "Percent completed correctly": "60.4%",
+        "Percent using correct edit format": "93.3%",
+        "Command": "aider --model o3-mini --reasoning-effort high",
+        "Edit format": "diff",
+        "Total Cost": "$18.16"
+    },
+    {
+        "Model": "DeepSeek R1",
+        "Percent completed correctly": "56.9%",
+        "Percent using correct edit format": "96.9%",
+        "Command": "aider --model deepseek/deepseek-reasoner",
+        "Edit format": "diff",
+        "Total Cost": "$5.42"
+    },
+    {
+        "Model": "o3-mini (medium)",
+        "Percent completed correctly": "53.8%",
+        "Percent using correct edit format": "95.1%",
+        "Command": "aider --model o3-mini",
+        "Edit format": "diff",
+        "Total Cost": "$8.86"
+    },
+    {
+        "Model": "claude-3-5-sonnet-20241022",
+        "Percent completed correctly": "51.6%",
+        "Percent using correct edit format": "99.6%",
+        "Command": "aider --model claude-3-5-sonnet-20241022",
+        "Edit format": "diff",
+        "Total Cost": "$14.41"
+    },
+    {
+        "Model": "DeepSeek Chat V3",
+        "Percent completed correctly": "48.4%",
+        "Percent using correct edit format": "98.7%",
+        "Command": "aider --model deepseek/deepseek-chat",
+        "Edit format": "diff",
+        "Total Cost": "$0.34"
+    },
+    {
+        "Model": "gemini-exp-1206",
+        "Percent completed correctly": "38.2%",
+        "Percent using correct edit format": "98.2%",
+        "Command": "aider --model gemini/gemini-exp-1206",
+        "Edit format": "whole",
+        "Total Cost": "?"
+    }
+]
