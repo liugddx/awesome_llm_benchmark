@@ -51,6 +51,8 @@ python scrape_data.py
 
 你可以使用任何静态文件服务器来查看 `index.html` 文件
 
+![Chatbot_Arena.png](image/Chatbot_Arena.png)
+
 ## 数据展示
 
 前端页面 `index.html` 包含四个选项卡，分别展示从 Chatbot Arena、AI Benchmark、Aider LLM 和热门基准测试汇总抓取的数据。页面加载时会自动抓取并展示最新的数据。

@@ -115,7 +115,6 @@
         <table id="chatbotArenaTable">
           <thead>
             <tr>
-              <th>Rank</th>
               <th>Model Name</th>
               <th>Link</th>
               <th>Arena Score</th>
@@ -205,7 +204,6 @@
           data.forEach(item => {
             const tr = document.createElement("tr");
             tr.innerHTML = `
-              <td>${item.rank}</td>
               <td>${item.model}</td>
               <td><a href="${item.model_link}" target="_blank">详情</a></td>
               <td>${item.arena_score}</td>
