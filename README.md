@@ -71,3 +71,8 @@ python scrape_data.py
 由 TIGER-Lab 在 Hugging Face Spaces 搭建的平台，专注于展示大模型在 MMLU-Pro 基准测试中的实力和排名，衡量模型的多任务学习能力。
 - Aider.Chat Leaderboards (https://aider.chat/docs/leaderboards/)
 汇总展示了不同大模型在多项评测标准下的表现，直观的数据展示帮助用户快速获取各模型的性能对比信息。
+
+## Benchmarks
+
+- [REFUTE](https://huggingface.co/datasets/BGPT-OFFICIAL/refute)
+用于科学批判与认知校准（证伪、局限性、过度声称、缺失证据拒绝、校准、植入缺陷检测）的 Apache-2.0 基准测试。 [Leaderboard](https://huggingface.co/spaces/BGPT-OFFICIAL/refute-leaderboard) · [Technical report](https://huggingface.co/datasets/BGPT-OFFICIAL/refute/blob/main/TECHNICAL_REPORT.md) · [Integrations](https://huggingface.co/datasets/BGPT-OFFICIAL/refute/tree/main/integrations)
